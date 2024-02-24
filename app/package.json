@@ -1,0 +1,19 @@
+{
+  "name": "chaos-testing",
+  "version": "1.0.0",
+  "description": "Introduction to chaos testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bolek Tekielsk",
+  "license": "MIT",
+  "dependencies": {
+    "@creditkarma/dynamic-config": "^1.1.0",
+    "axios": "^1.6.7",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
