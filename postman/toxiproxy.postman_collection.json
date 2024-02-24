@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "3773399c-f077-4c18-8432-a811002a5a03",
+		"name": "Toxiproxy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9647429",
+		"_collection_link": "https://crimson-satellite-503654.postman.co/workspace/TTMS~ba60d782-0902-479a-b591-4ef7d97f3119/collection/4307621-3773399c-f077-4c18-8432-a811002a5a03?action=share&source=collection_link&creator=9647429"
+	},
+	"item": [
+		{
+			"name": "list all proxies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8474/proxies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8474",
+					"path": [
+						"proxies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create proxy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"httpbin1\",\r\n    \"listen\": \"0.0.0.0:8080\",\r\n    \"upstream\": \"httpbin:80\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8474/proxies",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8474",
+					"path": [
+						"proxies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete toxic",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8474/proxies/dadjokes/toxics/dadjokes_timeout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8474",
+					"path": [
+						"proxies",
+						"dadjokes",
+						"toxics",
+						"dadjokes_timeout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create latency toxic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"latency\",\n    \"name\": \"dadjokes_latency\",\n    \"attributes\": {\n        \"latency\": 2000\n    },\n    \"toxicity\": 0.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8474/proxies/dadjokes/toxics",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8474",
+					"path": [
+						"proxies",
+						"dadjokes",
+						"toxics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create timeout toxic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"timeout\",\n    \"name\": \"dadjokes_timeout\",\n    \"attributes\": {\n        \"timeout\": 6000\n    },\n    \"toxicity\": 0.2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8474/proxies/dadjokes/toxics",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8474",
+					"path": [
+						"proxies",
+						"dadjokes",
+						"toxics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dad_joke",
+			"protocolProfileBehavior": {
+				"removeRefererHeaderOnRedirect": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "icanhazdadjoke.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/joke",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"joke"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
