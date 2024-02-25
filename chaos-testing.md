@@ -54,3 +54,16 @@ The goal is to identify potential failure points and correct them before they ca
 <!-- 
 Developed by Shopify, Toxiproxy is a framework for simulating network conditions. It's made specifically to work in testing, CI and development environments, supporting deterministic tampering with connections, but with support for randomized chaos and customization.
 -->
+
+---
+# Let's give it a (re)try
+![](re-try.png)
+
+<!-- 
+We are using axios-retry to fix the situation.
+As timeout by default does not trigger retry, we need to make it explicit
+  shouldResetTimeout: true,
+  retryCondition: (_error) => true
+We need to mind if we're not overflooding the system with re-tries, but that's entirely different problem
+-->
+

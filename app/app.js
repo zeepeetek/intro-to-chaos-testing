@@ -1,9 +1,19 @@
 var express = require('express');
 const app = express()
 const axios = require('axios');
+const axiosRetry = require('axios-retry').default;
 
 app.get('/', (req, res) => {
   res.send('Let the chaos begin!');
+});
+
+axiosRetry(axios, {
+  retries: 5,
+  onRetry: (retryCount, error, requestConfig) => {
+    console.log(`retry count: `, retryCount);
+  },
+  shouldResetTimeout: true,
+  retryCondition: (_error) => true
 });
 
 app.get('/joke', (req, res) => {
@@ -13,7 +23,7 @@ app.get('/joke', (req, res) => {
         'Accept': 'application/json',
         'Host': 'icanhazdadjoke.com:80'
       },
-      timeout: 5000
+      timeout: 1000
     })
     .then(response => {
       console.log(`${response.data.joke}`);
