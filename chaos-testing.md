@@ -3,10 +3,10 @@ marp: true
 backgroundColor: ##EDF2F9
 footer: Ramp.network
 backgroundImage: url('icon.png')
-backgroundSize: 65px
-backgroundPosition: top 20px left 20px
+backgroundSize: 45px
+backgroundPosition: top 10px left 10px
 ---
-# Intro to chaos testing
+# intro to chaos testing
 ---
 
 # Prerequisites
@@ -19,9 +19,22 @@ backgroundPosition: top 20px left 20px
 6. Cloned `chaos-testing` [repo](git@github.com:RampNetwork/chaos-testing.git)
 ---
 
-# *hello world* (well, not actually *hello world*, [but still](https://youtu.be/YeMnPyusuBE?t=274))
+# *hello world* (well, not actually *hello world*, *[but still](https://youtu.be/YeMnPyusuBE?t=274)*)
 
 <!-- 
 The joke is from Monty Python's "Funniest Joke in the World". 
 Luckily, nobody here speaks German, so we are safe 😆
 -->
+---
+
+# even the best joke can get boring
+
+<!-- 
+We need to spice up our service, as we are loosing our customers at alarming rate.
+-->
+---
+# but there is a problem
+![](jokes_responses.png)
+
+---
+![](errors.png)
