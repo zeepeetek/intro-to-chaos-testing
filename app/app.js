@@ -7,12 +7,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/joke', (req, res) => {
-  axios.get('http://icanhazdadjoke.com:80',
+  axios.get('http://proxy:8080',
     {
       headers: {
         'Accept': 'application/json',
+        'Host': 'icanhazdadjoke.com:80'
       },
-      timeout: 800
+      timeout: 5000
     })
     .then(response => {
       console.log(`${response.data.joke}`);

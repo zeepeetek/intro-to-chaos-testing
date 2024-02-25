@@ -40,7 +40,9 @@
 		}
 	},
 	"remoteEnv": {
-		"PATH": "${containerEnv:PATH}:/workspaces/chaos-testing/app/node_modules/.bin"
+		"PATH": "${containerEnv:PATH}:/workspaces/chaos-testing/app/node_modules/.bin",
+		"WORKSPACE_HOST_PATH": "${localWorkspaceFolder}/",
+		"INFRASTRUCTURE_PATH": "infrastructure/"
 	},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"

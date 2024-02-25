@@ -1,0 +1,24 @@
+version: '3.7'
+
+name: chaos-testing
+
+networks:
+  default:
+    name: chaos-testing
+    external: true
+
+services:
+  proxy:
+    image: ghcr.io/shopify/toxiproxy:2.7.0
+    ports:
+      - '8474:8474'
+      - '8080:8080'  
+    command:
+      - -host=0.0.0.0
+      # - -config=config.json
+    # volumes:
+      # - $WORKSPACE_HOST_PATH$INFRASTRUCTURE_PATH./toxiproxy/config.json:/config.json
+    environment:
+      - LOG_LEVEL=debug
+  
+  
