@@ -18,30 +18,38 @@ backgroundPosition: top 10px left 10px
 5. Docker `chaos-testing` network created: `$ docker network create chaos-testing`
 6. Cloned `chaos-testing` [repo](git@github.com:RampNetwork/chaos-testing.git)
 ---
-
 # *hello world* (well, not actually *hello world*, *[but still](https://youtu.be/YeMnPyusuBE?t=274)*)
+
 
 <!-- 
 The joke is from Monty Python's "Funniest Joke in the World". 
 Luckily, nobody here speaks German, so we are safe 😆
 -->
+<!-- 
+footer: 'branch: main'
+-->
 ---
-
 # even the best joke can get boring
 
 <!-- 
 We need to spice up our service, as we are loosing our customers at alarming rate.
 -->
+<!-- 
+footer: 'branch: one_joke_is_not_enough'
+-->
 ---
 # but there is a problem
 ![](jokes_responses.png)
 <!-- 
-avreage response time is ~700mS. But average user gets bored after 750mS, so we're tight.
+avreage response time is ~700mS. 
+But average user gets bored after 750mS, so we're tight.
 -->
 ---
 # looks like we're failing
 ![](errors.png)
-
+<!-- 
+Itroducing (aartificial) timeout shows that we have an issue. Question is is it only one, and how can we reproduce it on production.
+-->
 ---
 # Chaos Engineering
 
@@ -54,7 +62,9 @@ The goal is to identify potential failure points and correct them before they ca
 <!-- 
 Developed by Shopify, Toxiproxy is a framework for simulating network conditions. It's made specifically to work in testing, CI and development environments, supporting deterministic tampering with connections, but with support for randomized chaos and customization.
 -->
-
+<!-- 
+footer: 'branch: toxiproxy_comes_into_play'
+-->
 ---
 # Let's give it a (re)try
 ![](re-try.png)
@@ -66,4 +76,19 @@ As timeout by default does not trigger retry, we need to make it explicit
   retryCondition: (_error) => true
 We need to mind if we're not overflooding the system with re-tries, but that's entirely different problem
 -->
+<!-- 
+footer: 'branch: give_it_a_re_try'
+-->
+---
+# expose it to the world
+`docker run -it -e NGROK_AUTHTOKEN=YOUR_AUTH_TOKEN --rm --name ngrok --network=chaos-testing ngrok/ngrok:latest  http 172.20.0.2:3000`
 
+<!-- 
+Here we are using ngrok to expose our application to the internet. The ip is an actual IP of a running container.
+-->
+
+---
+# next steps
+* [Zed Attack Proxy](https://www.zaproxy.org/)
+* [mitmproxy](https://mitmproxy.org/)
+* [ChaosTollkit](https://chaostoolkit.org/)
