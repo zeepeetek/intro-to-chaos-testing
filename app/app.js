@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 axiosRetry(axios, {
   retries: 5,
   onRetry: (retryCount, error, requestConfig) => {
-    console.log(`retry count: `, retryCount);
+    console.log(`retry count: ${retryCount}, caused by ${error}`);
   },
   shouldResetTimeout: true,
   retryCondition: (_error) => true

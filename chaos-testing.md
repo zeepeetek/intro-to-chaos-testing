@@ -86,7 +86,9 @@ footer: 'branch: give_it_a_re_try'
 <!-- 
 Here we are using ngrok to expose our application to the internet. The ip is an actual IP of a running container.
 -->
-
+<!--
+footer: branch: expose_it_to_the_world
+-->
 ---
 # next steps
 * [Zed Attack Proxy](https://www.zaproxy.org/)
