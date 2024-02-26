@@ -90,6 +90,14 @@ Here we are using ngrok to expose our application to the internet. The ip is an 
 footer: branch: expose_it_to_the_world
 -->
 ---
+# unleash the chaos
+<!-- 
+Let's play with other toxics, and see if we are resilient. Start with *connection reset by peer*
+-->
+<!--
+footer: branch: unleash_the_chaos
+-->
+---
 # next steps
 * [Zed Attack Proxy](https://www.zaproxy.org/)
 * [mitmproxy](https://mitmproxy.org/)
