@@ -91,6 +91,7 @@ footer: branch: expose_it_to_the_world
 -->
 ---
 # unleash the chaos
+![](chaos_errors.png)
 <!-- 
 Let's play with other toxics, and see if we are resilient. Start with *connection reset by peer*
 -->
